@@ -15,7 +15,7 @@ public class H05_2 {
         System.out.println("Preis");
         double price = sc.nextDouble();
         System.out.println("Gesamtbetrag: " + price * litre);
-        System.out.println("Gesamtbetrag: " + (price * litre) / 100 * 81);
+        System.out.println("Gesamtbetrag: " + (price * litre) / 119 * 100);
     }
 
     private static void pyramid() {
