@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class H05_2 {
 
     public static void main(String[] args) {
-        gennauuu();
+        schock(370);
     }
 
     private static void fuelCalculator() {
@@ -39,12 +39,12 @@ public class H05_2 {
         return ellenToM(elle) / 1000 * 25.93;
     }
 
-    private static void schock(int n) {
+    private static void schock(int stueck) {
         int dutzend = 0;
         int schock = 0;
         int gros = 0;
-        int stueck = n;
         int counter = 0;
+
         while (stueck > 12) {
             if (counter == 12) {
                 counter = 0;
@@ -55,13 +55,14 @@ public class H05_2 {
                 dutzend = 0;
                 gros++;
             }
-            System.out.println(counter);
             counter++;
         }
+
         while (dutzend > 4) {
             dutzend = dutzend - 5;
             schock++;
         }
+
         System.out.println("Stueck: " + stueck);
         System.out.println("Dutzend: " + dutzend);
         System.out.println("Schock: " + schock);
