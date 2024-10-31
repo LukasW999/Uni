@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        iterationDoWhile();
+        iterationWhile(80);
     }
 
     public static void bmi() {
@@ -28,8 +28,7 @@ public class Main {
         System.out.println("Glückwunsch, jetzt leben sie gesund");
     }
 
-    public static void iterationWhile() {
-        int randomNumber = 80;
+    public static void iterationWhile(int randomNumber) {
         int divider = 2;
         while (randomNumber > 1) {
             if (randomNumber % divider == 0) {
