@@ -69,13 +69,13 @@ public class H05_2 {
         System.out.println("gros: " + gros);
     }
 
-    private static void zeichenZahlenUmwandlung(){
+    private static void zeichenZahlenUmwandlung() {
         System.out.println((char) 65);
         System.out.println((char) 193);
         int l = 'L';
         int w = 'W';
-        System.out.println("L: "+ l);
-        System.out.println("W: "+ w);
+        System.out.println("L: " + l);
+        System.out.println("W: " + w);
         int lCopy = l;
         StringBuilder builder = new StringBuilder();
         while (lCopy > 0) {
@@ -90,15 +90,15 @@ public class H05_2 {
             wCopy = wCopy / 2;
         }
         System.out.println(builder2.reverse());
-        String lBinaer=Integer.toBinaryString(l);
-        String wBinaer=Integer.toBinaryString(w);
+        String lBinaer = Integer.toBinaryString(l);
+        String wBinaer = Integer.toBinaryString(w);
         System.out.println(lBinaer);
         System.out.println(wBinaer);
-        System.out.println((char) Integer.parseInt(lBinaer,2));
-        System.out.println((char) Integer.parseInt(wBinaer,2));
+        System.out.println((char) Integer.parseInt(lBinaer, 2));
+        System.out.println((char) Integer.parseInt(wBinaer, 2));
     }
 
-    private static void gennauuu(){
+    private static void gennauuu() {
         float flow = 10 * 0.111f;
         System.out.printf("&.12f", flow);
         //Zeigt ne komische error Message an
