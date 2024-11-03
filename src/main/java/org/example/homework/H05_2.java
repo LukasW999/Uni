@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class H05_2 {
 
     public static void main(String[] args) {
-        gennauuu();
+        schock(370);
     }
 
     private static void fuelCalculator() {
