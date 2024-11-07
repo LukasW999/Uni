@@ -1,12 +1,13 @@
 package org.example.homework.H04;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Hausaufgabe Nr. 4
  */
 class Containerschiff {
-    private Map<String, Containerschiff> containerschiffFlotte;
+    public static HashMap<String, Containerschiff> containerschiffFlotte = new HashMap<>();
     private String taufName;
     private int schiffslaenge;
     private int anzahlStellplaetze;
@@ -17,7 +18,6 @@ class Containerschiff {
     /**
      * Erstellt ein neues Schiff
      *
-     * @param containerschiffFlotte Alle Schiffe welche im Programm existieren.
      * @param taufName
      * @param anzahlStellplaetze
      * @param schiffslaenge         die Schiffslänge in Nautischem Fuß
@@ -25,17 +25,17 @@ class Containerschiff {
      * @throws ExceptionInInitializerError Wenn die flotte null ist, der Name schon vergeben ist oder
      *                                     die Anzahl der Stellplätze unter 1000 ist.
      */
-    public Containerschiff(Map<String, Containerschiff> containerschiffFlotte,
-                           String taufName, int anzahlStellplaetze, int schiffslaenge, int brz) throws ExceptionInInitializerError {
-        if (containerschiffFlotte == null || containerschiffFlotte.containsKey(taufName) || anzahlStellplaetze < 1000) {
-            throw new ExceptionInInitializerError("Flotte ist nicht vorhanden, der Name ist bereits vergeben oder" +
+    public Containerschiff(String taufName, int anzahlStellplaetze, int schiffslaenge, int brz)
+            throws ExceptionInInitializerError {
+        if (containerschiffFlotte.containsKey(taufName) || anzahlStellplaetze < 1000) {
+            throw new ExceptionInInitializerError("Der Name ist bereits vergeben oder" +
                     " die Anzahl der Stellplätzen ist unter 1000");
         }
-        this.containerschiffFlotte = containerschiffFlotte;
         this.taufName = taufName;
         this.anzahlStellplaetze = anzahlStellplaetze;
         this.schiffslaenge = schiffslaenge;
         this.brz = brz;
+        containerschiffFlotte.put(taufName, this);
     }
 
     /**
@@ -108,8 +108,7 @@ class Containerschiff {
     @Override
     public String toString() {
         return "Containerschiff{" +
-                "containerschiffFlotte=" + containerschiffFlotte +
-                ", taufName='" + taufName + '\'' +
+                " taufName='" + taufName + '\'' +
                 ", schiffslaenge=" + schiffslaenge +
                 ", anzahlStellplaetze=" + anzahlStellplaetze +
                 ", anzahlFreieStellplaetze=" + anzahlFreieStellplaetze +
