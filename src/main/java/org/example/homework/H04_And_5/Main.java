@@ -4,6 +4,7 @@ import org.example.homework.H04_And_5.schiff.berufsschiffahrt.deutschland.Contai
 
 public class Main {
     public static void main(String[] args) {
+
         Containerschiff deutschland =
                 new Containerschiff("Inland", 1000, 900, 3333);
 
@@ -13,7 +14,5 @@ public class Main {
 
         System.out.println(deutschland);
         System.out.println(ausland);
-
-
     }
 }
