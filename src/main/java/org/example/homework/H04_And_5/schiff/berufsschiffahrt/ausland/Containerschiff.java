@@ -1,12 +1,16 @@
-package org.example.homework.H04;
+package org.example.homework.H04_And_5.schiff.berufsschiffahrt.ausland;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Hausaufgabe Nr. 4
+ * Hausaufgabe Nr. 4 +5
  */
-class Containerschiff {
-    private Map<String, Containerschiff> containerschiffFlotte;
+public class Containerschiff {
+    private final int MINDESTANZAHL_STELLPAETZE = 1000;
+
+    private static Map<String, org.example.homework.H04_And_5.schiff.berufsschiffahrt.deutschland.Containerschiff>
+            containerschiffFlotte = new HashMap<>();
     private String taufName;
     private int schiffslaenge;
     private int anzahlStellplaetze;
@@ -17,21 +21,19 @@ class Containerschiff {
     /**
      * Erstellt ein neues Schiff
      *
-     * @param containerschiffFlotte Alle Schiffe welche im Programm existieren.
      * @param taufName
      * @param anzahlStellplaetze
-     * @param schiffslaenge         die Schiffslänge in Nautischem Fuß
-     * @param brz                   die Bruttoraumzahl
+     * @param schiffslaenge      die Schiffslänge in Nautischem Fuß
+     * @param brz                die Bruttoraumzahl
      * @throws ExceptionInInitializerError Wenn die flotte null ist, der Name schon vergeben ist oder
      *                                     die Anzahl der Stellplätze unter 1000 ist.
      */
-    public Containerschiff(Map<String, Containerschiff> containerschiffFlotte,
-                           String taufName, int anzahlStellplaetze, int schiffslaenge, int brz) throws ExceptionInInitializerError {
-        if (containerschiffFlotte == null || containerschiffFlotte.containsKey(taufName) || anzahlStellplaetze < 1000) {
-            throw new ExceptionInInitializerError("Flotte ist nicht vorhanden, der Name ist bereits vergeben oder" +
+    public Containerschiff(String taufName, int anzahlStellplaetze, int schiffslaenge, int brz)
+            throws ExceptionInInitializerError {
+        if (containerschiffFlotte.containsKey(taufName) || anzahlStellplaetze < MINDESTANZAHL_STELLPAETZE) {
+            throw new ExceptionInInitializerError("Der Name ist bereits vergeben oder" +
                     " die Anzahl der Stellplätzen ist unter 1000");
         }
-        this.containerschiffFlotte = containerschiffFlotte;
         this.taufName = taufName;
         this.anzahlStellplaetze = anzahlStellplaetze;
         this.schiffslaenge = schiffslaenge;
@@ -75,10 +77,6 @@ class Containerschiff {
      */
     public int schiffslaengeInMeter() {
         return schiffslaenge / 3;
-    }
-
-    public Map<String, Containerschiff> getContainerschiffFlotte() {
-        return containerschiffFlotte;
     }
 
     public String getTaufName() {
