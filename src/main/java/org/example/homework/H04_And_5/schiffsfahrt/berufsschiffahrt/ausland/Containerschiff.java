@@ -1,4 +1,4 @@
-package org.example.homework.H04_And_5.schiff.berufsschiffahrt.ausland;
+package org.example.homework.H04_And_5.schiffsfahrt.berufsschiffahrt.ausland;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,10 +6,10 @@ import java.util.Map;
 /**
  * Hausaufgabe Nr. 4 +5
  */
-public class Containerschiff {
+class Containerschiff {
     private final int MINDESTANZAHL_STELLPAETZE = 1000;
 
-    private static Map<String, org.example.homework.H04_And_5.schiff.berufsschiffahrt.deutschland.Containerschiff>
+    private static Map<String, org.example.homework.H04_And_5.schiffsfahrt.berufsschiffahrt.deutschland.Containerschiff>
             containerschiffFlotte = new HashMap<>();
     private String taufName;
     private int schiffslaenge;

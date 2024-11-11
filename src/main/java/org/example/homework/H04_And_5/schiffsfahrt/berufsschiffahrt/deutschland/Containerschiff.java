@@ -1,4 +1,6 @@
-package org.example.homework.H04_And_5.schiff.berufsschiffahrt.deutschland;
+package org.example.homework.H04_And_5.schiffsfahrt.berufsschiffahrt.deutschland;
+
+import org.example.homework.H04_And_5.schiffsfahrt.Hafen;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +18,7 @@ public class Containerschiff {
     private int anzahlFreieStellplaetze;
     private int anzahlBeladeneContainer;
     private int brz; //Bruttoraumzahl
+    private Hafen hafen;
 
     /**
      * Erstellt ein neues Schiff
@@ -27,7 +30,7 @@ public class Containerschiff {
      * @throws ExceptionInInitializerError Wenn die flotte null ist, der Name schon vergeben ist oder
      *                                     die Anzahl der Stellplätze unter 1000 ist.
      */
-    public Containerschiff(String taufName, int anzahlStellplaetze, int schiffslaenge, int brz)
+    public Containerschiff(String taufName, int anzahlStellplaetze, int schiffslaenge, int brz, Hafen hafen)
             throws ExceptionInInitializerError {
         if (containerschiffFlotte.containsKey(taufName) || anzahlStellplaetze < MINDESTANZAHL_STELLPAETZE) {
             throw new ExceptionInInitializerError("Der Name ist bereits vergeben oder" +
@@ -37,6 +40,11 @@ public class Containerschiff {
         this.anzahlStellplaetze = anzahlStellplaetze;
         this.schiffslaenge = schiffslaenge;
         this.brz = brz;
+        this.hafen = hafen;
+    }
+
+    private void aendereNautischesKennzeichenVonHafen(String neuesKennzeichen) {
+        getHafen().setInternationalesKuerzel(neuesKennzeichen);
     }
 
     /**
@@ -76,6 +84,14 @@ public class Containerschiff {
      */
     public int schiffslaengeInMeter() {
         return schiffslaenge / 3;
+    }
+
+    public Hafen getHafen() {
+        return hafen;
+    }
+
+    public void setHafen(Hafen hafen) {
+        this.hafen = hafen;
     }
 
     public Map<String, Containerschiff> getContainerschiffFlotte() {

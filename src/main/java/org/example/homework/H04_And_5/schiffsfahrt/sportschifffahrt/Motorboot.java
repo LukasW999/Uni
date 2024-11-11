@@ -1,4 +1,4 @@
-package org.example.homework.H04_And_5.schiff.sportschifffahrt;
+package org.example.homework.H04_And_5.schiffsfahrt.sportschifffahrt;
 
 public class Motorboot {
     private int leistung;
