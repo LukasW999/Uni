@@ -17,7 +17,7 @@ public class Containerschiff {
     private int anzahlStellplaetze;
     private int anzahlFreieStellplaetze;
     private int anzahlBeladeneContainer;
-    private int brz; //Bruttoraumzahl
+    private double brz; //Bruttoraumzahl
     private Hafen hafen;
 
     /**
@@ -118,8 +118,40 @@ public class Containerschiff {
         return anzahlBeladeneContainer;
     }
 
-    public int getBrz() {
+    public double getBrz() {
         return brz;
+    }
+
+    public int getMINDESTANZAHL_STELLPAETZE() {
+        return MINDESTANZAHL_STELLPAETZE;
+    }
+
+    public static void setContainerschiffFlotte(Map<String, Containerschiff> containerschiffFlotte) {
+        Containerschiff.containerschiffFlotte = containerschiffFlotte;
+    }
+
+    public void setTaufName(String taufName) {
+        this.taufName = taufName;
+    }
+
+    public void setSchiffslaenge(int schiffslaenge) {
+        this.schiffslaenge = schiffslaenge;
+    }
+
+    public void setAnzahlStellplaetze(int anzahlStellplaetze) {
+        this.anzahlStellplaetze = anzahlStellplaetze;
+    }
+
+    public void setAnzahlFreieStellplaetze(int anzahlFreieStellplaetze) {
+        this.anzahlFreieStellplaetze = anzahlFreieStellplaetze;
+    }
+
+    public void setAnzahlBeladeneContainer(int anzahlBeladeneContainer) {
+        this.anzahlBeladeneContainer = anzahlBeladeneContainer;
+    }
+
+    public void setBrz(double brz) {
+        this.brz = brz;
     }
 
     @Override
