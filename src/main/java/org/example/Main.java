@@ -5,6 +5,7 @@ public class Main {
         BMI bmi = new BMI();
         bmi.einlesen();
         bmi.ausgeben();
+        //Haha
     }
 
     public static void iterationWhile(int randomNumber) {
