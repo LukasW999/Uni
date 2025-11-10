@@ -1,34 +1,44 @@
 package org.example;
 
+import org.example.marten.Fahrzeug;
+import org.example.marten.Pflegecreme;
+import org.example.marten.Punkt;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        BMI bmi = new BMI();
-        bmi.einlesen();
-        bmi.ausgeben();
-    }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Füge deine Subreddit-Namen ein (jeweils eine Zeile). Beende mit einer Leerzeile:");
 
-    public static void iterationWhile(int randomNumber) {
-        int divider = 10;
-        while (randomNumber > 1) {
-            if (randomNumber % divider == 0) {
-                System.out.println(divider);
-                randomNumber = randomNumber / divider;
-            } else {
-                divider++;
+        while (true) {
+            String line = scanner.nextLine().trim();
+            if (line.isEmpty()) {
+                break;
             }
+            System.out.println("https://www.reddit.com/r/" + line);
         }
+
+        scanner.close();
+        System.out.println("Fertig.");
     }
 
-    public static void iterationDoWhile() {
-        int randomNumber = 80;
-        int divider = 2;
+
+
+    public static void doWhileTest() {
+        int x = 10; // 0
+        int result = 1; // 11
         do {
-            if (randomNumber % divider == 0) {
-                System.out.println(divider);
-                randomNumber = randomNumber / divider;
+            if (x % 3 == 0) {
+                result *= 2;
             } else {
-                divider++;
+                result += x / 4; // 2 / 4 =0,5 11 + 0,5 = 11
             }
-        } while (randomNumber > 1);
+            x -= 2; // 2 - 2 = 0
+        } while (x > 0);
+        System.out.println(result);
     }
+
+
 }
